@@ -1,0 +1,105 @@
+{
+  "title": "Basic Customer Details",
+  "fields": [
+    {
+      "name": "fullName",
+      "label": "Full Name",
+      "type": "text",
+      "placeholder": "Enter full name",
+      "validation": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 50,
+        "errorMessage": "Full name must be 3–50 characters"
+      }
+    },
+    {
+      "name": "mobile",
+      "label": "Mobile Number",
+      "type": "phone",
+      "placeholder": "Enter mobile number",
+      "validation": {
+        "required": true,
+        "regex": "^[0-9]{10}$",
+        "errorMessage": "Mobile number must be exactly 10 digits"
+      }
+    },
+    {
+      "name": "email",
+      "label": "Email Address",
+      "type": "email",
+      "placeholder": "Enter email",
+      "validation": {
+        "required": false,
+        "regex": "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$",
+        "errorMessage": "Enter a valid email address"
+      }
+    },
+    {
+      "name": "dob",
+      "label": "Date of Birth",
+      "type": "date",
+      "validation": {
+        "required": true,
+        "errorMessage": "Date of birth is required"
+      }
+    },
+    {
+      "name": "gender",
+      "label": "Gender",
+      "type": "select",
+      "options": [
+        {
+          "label": "Male",
+          "value": "male"
+        },
+        {
+          "label": "Female",
+          "value": "female"
+        },
+        {
+          "label": "Other",
+          "value": "other"
+        }
+      ],
+      "validation": {
+        "required": true,
+        "errorMessage": "Please select gender"
+      }
+    },
+    {
+      "name": "pan",
+      "label": "PAN Number",
+      "type": "text",
+      "placeholder": "ABCDE1234F",
+      "validation": {
+        "required": true,
+        "regex": "^[A-Z]{5}[0-9]{4}[A-Z]{1}$",
+        "errorMessage": "Enter valid PAN (ABCDE1234F)"
+      }
+    },
+    {
+      "name": "monthlyIncome",
+      "label": "Monthly Income",
+      "type": "number",
+      "placeholder": "Enter income",
+      "validation": {
+        "required": true,
+        "min": 5000,
+        "max": 500000,
+        "errorMessage": "Income must be between ₹5,000 and ₹5,00,000"
+      }
+    },
+    {
+      "name": "address",
+      "label": "Address",
+      "type": "textarea",
+      "placeholder": "Enter address",
+      "validation": {
+        "required": true,
+        "minLength": 10,
+        "errorMessage": "Address must be at least 10 characters long"
+      }
+    }
+  ]
+}

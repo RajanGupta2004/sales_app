@@ -34,7 +34,7 @@ const RootNavigation = () => {
   const token = false;
   return (
     <NavigationContainer>
-      {!token ? <AuthStack /> : <MainStack />}
+      {token ? <AuthStack /> : <MainStack />}
     </NavigationContainer>
   );
 };
