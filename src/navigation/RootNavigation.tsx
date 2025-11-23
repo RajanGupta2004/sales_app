@@ -1,29 +1,20 @@
-import { View, Text } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
-import SplashSecreen from "../screens/SplashSecreen";
 import LoginScreen from "../screens/LoginScreen";
 import DashBoardScreen from "../screens/DashBoardScreen";
 import LeadCreationScreen from "../screens/LeadCreationScreen";
 import ApplicationCreationScreen from "../screens/ApplicationCreationScreen";
+import SplashScreen from "../screens/SplashScreen";
 
-const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
 
 const RootNavigation = () => {
   const AuthStack = () => {
     return (
       <Stack.Navigator>
-        <Stack.Screen
-          name="splash"
-          component={SplashSecreen}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="login"
-          component={LoginScreen}
-          options={{ headerShown: false }}
-        />
+        <Stack.Screen name="splash" component={SplashScreen} />
+        <Stack.Screen name="login" component={LoginScreen} />
       </Stack.Navigator>
     );
   };
@@ -40,10 +31,10 @@ const RootNavigation = () => {
       </Stack.Navigator>
     );
   };
-  const token = null;
+  const token = false;
   return (
     <NavigationContainer>
-      {!token ? <AuthStack /> : <MainStack />}
+      {token ? <AuthStack /> : <MainStack />}
     </NavigationContainer>
   );
 };
